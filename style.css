@@ -1,0 +1,299 @@
+/* Reset dasar */
+body, h1, h2, ul, li, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Tampilan dasar */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+    background-image: url('background.jpg'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tampilan header */
+header {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(76, 175, 80, 0.8); /* Warna latar belakang dengan transparansi */
+    color: #fff; /* Ubah warna teks */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h2 {
+    font-size: 1.2em;
+}
+
+/* Tampilan kontainer utama */
+main {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Menambahkan margin di antara section */
+section {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 20px;
+    flex: 1;
+    min-width: 280px; /* Agar tampilan responsif pada layar yang lebih kecil */
+}
+
+/* Background untuk kotak */
+#pomodoro,
+#todo-list,
+#spotify {
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi */
+}
+
+/* Tampilan judul section */
+#pomodoro h2,
+#todo-list h2,
+#spotify h2 {
+    margin-bottom: 15px;
+    color: #3f51b5; /* Warna biru pada judul */
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 2px solid #3f51b5;
+    padding-bottom: 10px;
+}
+
+/* Tampilan timer */
+#timer-display {
+    font-size: 2.5em;
+    margin-top: 20px;
+    text-align: center;
+    color: #d32f2f;
+    border: 2px solid #d32f2f;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #ffebee;
+}
+
+/* Tampilan notifikasi */
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+#notification.show {
+    display: block;
+}
+
+/* Tampilan daftar tugas */
+#tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tasks li {
+    background-color: #e0e0e0;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+#tasks li.completed {
+    text-decoration: line-through;
+    background-color: #aed581;
+}
+
+/* Tampilan tombol */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button .icon {
+    margin-right: 8px;
+}
+
+input[type="text"], input[type="number"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+/* Tambahkan beberapa animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#notification.show {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Tampilan responsif untuk layar kecil */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 80%;
+    }
+}
+.complete-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+}
+
+.complete-btn:hover {
+    background-color: #45a049;
+}
+
+/* Tampilan tugas yang selesai */
+.completed {
+    text-decoration: line-through;
+    background-color: #aed581;
+}
+
+/* Mode terang (default) */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    color: #333;
+    background-image: url('background.jpg'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(76, 175, 80, 0.8); /* Warna latar belakang dengan transparansi */
+    color: #fff; /* Ubah warna teks */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    max-width: 600px; /* Menentukan lebar maksimum untuk section */
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih dengan transparansi */
+    margin-bottom: 20px;
+}
+
+/* Mode gelap */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+header.dark-mode {
+    background-color: rgba(40, 40, 40, 0.8);
+    color: #f0f0f0;
+}
+
+section.dark-mode {
+    background-color: rgba(40, 40, 40, 0.8);
+    color: #f0f0f0;
+}
+
+button#toggle-dark-mode {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button#toggle-dark-mode:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
